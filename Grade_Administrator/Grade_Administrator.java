@@ -20,7 +20,7 @@ public class Grade_Administrator {
 				output.printStudents(people);
 				output.viewSelection();
 				
-				switch(input.scan.nextInt()) {
+				switch(input.select()) {
 				case NEW_STUDENT :
 					input.newStudent(people);
 					break;

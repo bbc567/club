@@ -4,16 +4,17 @@ public class output {
 	public output() {		
 	}
 	
-	public static void printStudents(linkedList people) {		
+	public static void printStudents(linkedList people) {	
+		System.out.println();
 		for(int index = 0; index < people.getLength(); index++) {
 			try {
 				student student = (student) people.getData(index);
 				System.out.println(index + " :  " + student.getName() + "  " + student.getScore() + "Á¡");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		System.out.println();
 	}
 	
 	public static void viewSelection() {

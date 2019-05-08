@@ -9,8 +9,11 @@ public class input {
 	}
 	
 	public void newStudent(linkedList people) {
+		scan.nextLine(); // 입력 버퍼 비우기용
 		System.out.println("이름을 입력해주세요 > ");
 		String name = scan.nextLine();
+
+				
 		System.out.println("점수를 입력해주세요 > ");
 		int score = scan.nextInt();
 		
@@ -43,5 +46,8 @@ public class input {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public int select() {
+		return scan.nextInt();
 	}
 }

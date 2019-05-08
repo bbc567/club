@@ -108,16 +108,16 @@ public class linkedList {
 		
 		if(index == 0)
 			removeFirst();
+		else {
+			Node temp = indexToNode(index - 1);
+			Node to_remove = temp.next;
+			temp.next = to_remove.next;
 		
-		Node temp = indexToNode(index - 1);
-		Node to_remove = temp.next;
-		temp.next = to_remove.next;
-		
-		if(to_remove == tail)
-			tail = null;
-		
-		to_remove = null;
-		length--;
+			if(to_remove == tail)
+				tail = null;
+			to_remove = null;
+			length--;
+		}
 	}
 	
 	public int getLength() {
