@@ -78,20 +78,21 @@ public class linkedList {
 			node = node.next;
 		return node;
 	}
-	
-	public String toString() {
-		if(length == 0)
-			return "";
-		
-		Node temp = head;
-		String result = "";
-		while(temp.next != null) {
-			result += temp.data + ", ";
-			temp = temp.next;
-		}
-		result += temp.data;
-		return result;
-	}
+
+//	public void print() {
+//		if(length == 0)
+//			System.out.println("");
+//		else {
+//			Node temp = head;
+//			int index = 0;
+//			
+//			while(temp.next != null) {
+//				System.out.println(index + " " + temp.data);
+//				temp = temp.next;
+//				index++;
+//			}
+//		}
+//	}
 	
 	public void removeFirst() {
 		Node to_remove = head;
@@ -140,5 +141,14 @@ public class linkedList {
 			searchNode = searchNode.next;
 		}
 		throw new Exception("search data do not exist");
+	}
+	
+	public void changeData(Object data, int index) {
+		try {
+			Node changeNode = indexToNode(index);
+			changeNode.data = data;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
