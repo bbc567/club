@@ -15,12 +15,15 @@ public class Grade_Administrator {
 			linkedList people = new linkedList();
 			
 			boolean stay = true;
+			int before = -1;			
 			
 			while(stay) {
-				output.printStudents(people);
+				if(before >= NEW_STUDENT && before <= DELETE_STUDENT)
+					output.printPeople(people);
 				output.viewSelection();
+				before = input.scan.nextInt();
 				
-				switch(input.select()) {
+				switch(before) {
 				case NEW_STUDENT :
 					input.newStudent(people);
 					break;
@@ -31,7 +34,7 @@ public class Grade_Administrator {
 					input.deleteStudent(people);
 					break;
 				case VIEW_GRADE :
-					System.out.println("Not Yet");
+					grade.print(people);
 					break;
 				}
 			}

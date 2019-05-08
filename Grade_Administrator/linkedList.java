@@ -114,7 +114,7 @@ public class linkedList {
 			temp.next = to_remove.next;
 		
 			if(to_remove == tail)
-				tail = null;
+				tail = temp;
 			to_remove = null;
 			length--;
 		}

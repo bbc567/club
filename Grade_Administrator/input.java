@@ -15,7 +15,7 @@ public class input {
 
 				
 		System.out.println("점수를 입력해주세요 > ");
-		int score = scan.nextInt();
+		int score = inputScore();
 		
 		student student = new student(name, score);
 		people.addLast(student);
@@ -26,7 +26,7 @@ public class input {
 		int index = scan.nextInt();
 
 		System.out.println("점수를 입력해주세요 > ");
-		int score = scan.nextInt();
+		int score = inputScore();
 		
 		try {
 			student student = (student) people.getData(index);
@@ -47,7 +47,15 @@ public class input {
 			e.printStackTrace();
 		}
 	}
-	public int select() {
-		return scan.nextInt();
+	
+	private int inputScore() {
+		int score = 0;
+		while(true) {
+			score = scan.nextInt();
+			if(score >= 0 && score <= 100)
+				break;
+			System.out.println("올바르지 않은 값");
+		}
+		return score;
 	}
 }
